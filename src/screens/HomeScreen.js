@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
+import { Helmet } from 'react-helmet-async';
 
 const config = require('../config.json');
 
@@ -41,6 +42,9 @@ const HomeScreen = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>amazonB</title>
+      </Helmet>
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
