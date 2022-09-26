@@ -1,7 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
-import logger from 'use-reducer-logger';
 import Product from '../components/Product';
 
 const config = require('../config.json');

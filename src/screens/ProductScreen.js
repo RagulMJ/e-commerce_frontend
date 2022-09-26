@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useReducer, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 
 const config = require('../config.json');
 
@@ -29,7 +30,10 @@ const ProductScreen = () => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const result = await axios(`${config.HOST}/api/products/slug/${slug}`);
+        const result = await axios.get(
+          `${config.HOST}/api/products/slug/${slug}`
+        );
+        console.log(result);
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (error) {
         dispatch({ type: 'FETCH_FAIL', payload: error.message });
@@ -43,7 +47,13 @@ const ProductScreen = () => {
   ) : error ? (
     <div>{error}</div>
   ) : (
-    <div>{product.name}</div>
+    <Row>
+      <Col md={6}>
+        <img className="img-large" src={product.image} alt={product.name} />
+      </Col>
+      <Col md={3}></Col>
+      <Col md={3}></Col>
+    </Row>
   );
 };
 
