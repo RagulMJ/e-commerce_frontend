@@ -64,7 +64,7 @@ main {
   height: 100%;
   position: absolute;
   left: -300px;
-  background-color: #100901;
+  background-color: #1b2024;
   transition: 0.5s;
 }
 
@@ -76,4 +76,7 @@ main {
 }
 .active-nav {
   left: 0;
+}
+.text-bold {
+  font-weight: bold;
 }
