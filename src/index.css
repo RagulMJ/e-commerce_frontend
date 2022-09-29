@@ -78,5 +78,10 @@ main {
   left: 0;
 }
 .text-bold {
+  /* color: white; */
   font-weight: bold;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
 }

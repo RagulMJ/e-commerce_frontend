@@ -75,12 +75,12 @@ function App() {
                 <i className="fas fa-bars"></i>
               </Button>
               <LinkContainer to="/">
-                <Navbar.Brand>amazonB</Navbar.Brand>
+                <Navbar.Brand>MERN Store</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
+              <Navbar.Collapse id=" basic-navbar-nav">
                 <SearchBox />
-                <Nav className="me-auto  w-100  justify-content-end">
+                <Nav className="me-auto  w-50  justify-content-end">
                   <Link to="/cart" className="nav-link">
                     Cart
                     {cart.cartItems.length > 0 && (
@@ -111,7 +111,7 @@ function App() {
                       Sign In
                     </Link>
                   )}
-                  {userInfo && userInfo.isAdmin && (
+                  {/* {userInfo && userInfo.isAdmin && (
                     <NavDropdown title="Admin" id="admin-nav-dropdown">
                       <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
@@ -126,7 +126,7 @@ function App() {
                         <NavDropdown.Item>Users</NavDropdown.Item>
                       </LinkContainer>
                     </NavDropdown>
-                  )}
+                  )} */}
                 </Nav>
               </Navbar.Collapse>
             </Container>
