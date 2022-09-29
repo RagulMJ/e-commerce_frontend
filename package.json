@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "https://dashboard.heroku.com/apps/mern-store-rj/logs",
+  "proxy": "https://mern-store-rj.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
