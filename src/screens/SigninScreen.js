@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 import { getError } from '../utils';
 import { useContext, useEffect, useState } from 'react';
 
+const config = require('../config.json');
+
 export default function SigninScreen() {
   const navigate = useNavigate();
   const { search } = useLocation();
@@ -22,7 +24,7 @@ export default function SigninScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await Axios.post('/api/users/signin', {
+      const { data } = await Axios.post(`${config.HOST}/api/users/signin`, {
         email,
         password,
       });

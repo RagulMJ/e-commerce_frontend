@@ -21,6 +21,8 @@ const reducer = (state, action) => {
   }
 };
 
+const config = require('../config.json');
+
 export default function ProfileScreen() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
@@ -37,7 +39,7 @@ export default function ProfileScreen() {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        '/api/users/profile',
+        `${config.HOST}/api/users/profile`,
         {
           name,
           email,

@@ -9,6 +9,8 @@ import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
 
+const config = require('../config.json');
+
 export default function SignupScreen() {
   const navigate = useNavigate();
   const { search } = useLocation();
@@ -29,7 +31,7 @@ export default function SignupScreen() {
       return;
     }
     try {
-      const { data } = await Axios.post('/api/users/signup', {
+      const { data } = await Axios.post(`${config.HOST}/api/users/signup`, {
         name,
         email,
         password,

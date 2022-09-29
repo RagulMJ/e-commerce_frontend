@@ -7,6 +7,8 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { Store } from '../Store';
 
+const config = require('../config.json');
+
 const Product = (props) => {
   const { product } = props;
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -17,7 +19,7 @@ const Product = (props) => {
   const addToCartHandler = async (item) => {
     const existItem = cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
-    const { data } = await axios.get(`/api/products/${item._id}`);
+    const { data } = await axios.get(`${config.HOST}/api/products/${item._id}`);
     if (data.countInStock < quantity) {
       window.alert('Sorry. Product is out of stock');
       return;

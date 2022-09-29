@@ -21,6 +21,8 @@ const reducer = (state, action) => {
   }
 };
 
+const config = require('../config.json');
+
 export default function OrderHistoryScreen() {
   const { state } = useContext(Store);
   const { userInfo } = state;
@@ -35,7 +37,7 @@ export default function OrderHistoryScreen() {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
         const { data } = await axios.get(
-          `/api/orders/mine`,
+          `${config.HOST}/api/orders/mine`,
 
           { headers: { Authorization: `Bearer ${userInfo.token}` } }
         );
