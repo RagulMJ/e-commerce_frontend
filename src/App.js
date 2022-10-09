@@ -27,6 +27,7 @@ import SearchScreen from './screens/SearchScreen';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
 import AdminRoute from './components/AdminRoute';
+import ProductListScreen from './screens/ProductListScreen';
 
 const config = require('./config.json');
 
@@ -115,22 +116,25 @@ function App() {
                       Sign In
                     </Link>
                   )}
-                  {/* {userInfo && userInfo.isAdmin && (
+                  {userInfo && userInfo.isAdmin && (
                     <NavDropdown title="Admin" id="admin-nav-dropdown">
                       <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                        <LinkContainer to="/admin/products"></LinkContainer>
                       </LinkContainer>
                       <LinkContainer to="/admin/productlist">
                         <NavDropdown.Item>Products</NavDropdown.Item>
+                        <LinkContainer to="/admin/orders"></LinkContainer>
                       </LinkContainer>
-                      <LinkContainer to="/admin/orderlist">
+                      {/* <LinkContainer to="/admin/orderlist">
                         <NavDropdown.Item>Orders</NavDropdown.Item>
+                        <LinkContainer to="/admin/users"></LinkContainer>
                       </LinkContainer>
                       <LinkContainer to="/admin/userlist">
                         <NavDropdown.Item>Users</NavDropdown.Item>
-                      </LinkContainer>
+                      </LinkContainer> */}
                     </NavDropdown>
-                  )} */}
+                  )}
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -200,6 +204,14 @@ function App() {
                 element={
                   <AdminRoute>
                     <DashboardScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/products"
+                element={
+                  <AdminRoute>
+                    <ProductListScreen />
                   </AdminRoute>
                 }
               ></Route>
