@@ -34,6 +34,8 @@ const reducer = (state, action) => {
   }
 };
 
+const config = require('../config.json');
+
 const prices = [
   {
     name: '$1 to $50',
