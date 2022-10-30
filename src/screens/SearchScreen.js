@@ -90,8 +90,6 @@ export default function SearchScreen() {
       error: '',
     });
 
-  const config = require('../config.json');
-
   useEffect(() => {
     const fetchData = async () => {
       try {
